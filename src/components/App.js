@@ -3,6 +3,7 @@ import "./App.scss";
 import Header from "./Header";
 import ResultJson from "./ResultJson";
 import Select from "./Select";
+import Text from "./Text";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends React.Component {
         <main className="container">
           <section className="form">
             <Select id="number" text="Escoge un número" options={this.numberOptions} handleChange={this.changeSelect} />
+            <Text id="name" text="Escribe tu nombre" placeholder="Kizzmekia Shanta Corbett" />
           </section>
 
           <ResultJson result={this.state} />
