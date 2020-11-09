@@ -5,10 +5,13 @@ import './ResultJson.scss';
 class ResultJson extends React.Component {
   render() {
     console.log(this.props);
-    
+
     const jsonText = JSON.stringify(this.props.result);
 
-    const jsonPrettyText = jsonText;
+    const jsonPrettyText = jsonText
+      .replace("{", "{\n  ")
+      .replace("}", "\n}")
+      .replace(",", ",\n  ");
 
     return (
       <section className="result">
