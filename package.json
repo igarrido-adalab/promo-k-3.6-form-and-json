@@ -1,11 +1,11 @@
 {
-  "name": "my-template",
-  "description": "React example for how-to decompose a page into components",
+  "name": "promo-k-3.6-form-and-json",
+  "description": "Exercice to build a form with an auto-updating section",
   "author": "Iván Garrido (profesor) <ivan@adalab.es>",
-  "keywords": ["Adalab", "ReactJS", "web components"],
+  "keywords": ["Adalab", "ReactJS", "web components", "lifting", "state"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Adalab/ejercicios-en-clase-k",
+    "url": "https://github.com/igarrido-adalab/promo-k-3.6-form-and-json",
     "directory": "modulo-3-leccion-03"
   },
   "version": "0.1.0",

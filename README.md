@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Form example in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Exercice to build a form with an auto-updating section.
 
 ## Available Scripts
 

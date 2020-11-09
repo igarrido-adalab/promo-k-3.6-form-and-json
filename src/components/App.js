@@ -6,9 +6,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header number="2.6" lesson="Estado" title="Xxx" subtitle="Xxx" />
+        <Header number="2.6" lesson="Estado" title="Formulario" subtitle="Con JSON!" />
         <main className="container">
-          Content goes here...
         </main>
       </div>
     );
