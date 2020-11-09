@@ -14,12 +14,22 @@ class App extends React.Component {
     this.state = { };
 
     this.changeSelect = this.changeSelect.bind(this);
+    this.changeText = this.changeText.bind(this);
   }
 
   changeSelect(newValue) {
     this.setState(
       {
         number: newValue
+      }
+    );
+  }
+
+  changeText(newValue) {
+    // Añadimos sólo lo que cambia o lo que es nuevo
+    this.setState(
+      {
+        name: newValue
       }
     );
   }
@@ -34,7 +44,12 @@ class App extends React.Component {
         <main className="container">
           <section className="form">
             <Select id="number" text="Escoge un número" options={this.numberOptions} handleChange={this.changeSelect} />
-            <Text id="name" text="Escribe tu nombre" placeholder="Kizzmekia Shanta Corbett" />
+            <Text
+              id="name"
+              text="Escribe tu nombre"
+              placeholder="Kizzmekia Shanta Corbett"
+              handleChange={this.changeText}
+            />
           </section>
 
           <ResultJson result={this.state} />
