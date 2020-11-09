@@ -1,14 +1,22 @@
 import React from "react";
 import "./App.scss";
 import Header from "./Header";
-import Select from "./Select";
 import ResultJson from "./ResultJson";
+import Select from "./Select";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.result= {text:"Testing result"};
+    this.result = {};
+
+    this.changeSelect = this.changeSelect.bind(this);
+  }
+
+  changeSelect(newValue) {
+    this.result.number = newValue;
+    // No cambia nada. Hay que forzar la actualización del HTML.
+    this.forceUpdate();
   }
 
   render() {
@@ -17,7 +25,7 @@ class App extends React.Component {
         <Header number="2.6" lesson="Estado" title="Formulario" subtitle="Con JSON!" />
         <main className="container">
           <section className="form">
-            <Select id="number" text="Escoge un número" />
+            <Select id="number" text="Escoge un número" handleChange={this.changeSelect} />
           </section>
 
           <ResultJson result={this.result} />
