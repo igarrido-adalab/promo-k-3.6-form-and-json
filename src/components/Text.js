@@ -1,14 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class Text extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.handleBlur = this.handleBlur.bind(this);
-  }
-
-  handleBlur(ev) {
+function Text(props) {
+  const handleBlur = (ev) => {
     const inputChanged = ev.currentTarget;
     const inputId = inputChanged.id;
     const valueChanged = inputChanged.value;
@@ -16,36 +10,34 @@ class Text extends React.Component {
     console.log("Text.handleBlur()");
     console.log(valueChanged);
 
-    this.props.handleChange(inputId,valueChanged);
-  }
+    props.handleChange(inputId, valueChanged);
+  };
 
-  render() {
-    console.log("Text.render()");
-    console.log(this.props);
+  console.log("Text.render()");
+  console.log(props);
 
-    return (
-      <div className="Text">
-        <label htmlFor={this.props.id} className="form__label">
-          {this.props.text}:
-        </label>
-        <input
-          type="text"
-          name={this.props.id}
-          id={this.props.id}
-          placeholder={this.props.placeholder}
-          className="form__text"
-          onBlur={this.handleBlur}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="Text">
+      <label htmlFor={props.id} className="form__label">
+        {props.text}:
+      </label>
+      <input
+        type="text"
+        name={props.id}
+        id={props.id}
+        placeholder={props.placeholder}
+        className="form__text"
+        onBlur={handleBlur}
+      />
+    </div>
+  );
 }
 
 Text.propTypes = {
   id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Text;
