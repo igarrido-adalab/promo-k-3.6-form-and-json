@@ -4,6 +4,7 @@ import './ResultJson.scss';
 
 class ResultJson extends React.Component {
   render() {
+    console.log("ResultJson.render()");
     console.log(this.props);
 
     const jsonText = JSON.stringify(this.props.result);

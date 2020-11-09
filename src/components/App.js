@@ -8,18 +8,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.result = {};
+    this.state = { };
 
     this.changeSelect = this.changeSelect.bind(this);
   }
 
   changeSelect(newValue) {
-    this.result.number = newValue;
-    // No cambia nada. Hay que forzar la actualización del HTML.
-    this.forceUpdate();
+    this.setState(
+      {
+        number: newValue
+      }
+    );
   }
 
   render() {
+    console.log("App.render()");
+    console.log(this.state);
+
     return (
       <div className="App">
         <Header number="2.6" lesson="Estado" title="Formulario" subtitle="Con JSON!" />
@@ -28,7 +33,7 @@ class App extends React.Component {
             <Select id="number" text="Escoge un número" handleChange={this.changeSelect} />
           </section>
 
-          <ResultJson result={this.result} />
+          <ResultJson result={this.state} />
         </main>
       </div>
     );

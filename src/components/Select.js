@@ -11,12 +11,16 @@ class Select extends React.Component {
     const selectChanged = ev.currentTarget;
     const valueSelected = selectChanged.value;
 
+    console.log("Select.handleChange()");
     console.log(valueSelected);
 
     this.props.handleChange(valueSelected);
   }
 
   render() {
+    console.log("Select.render()");
+    console.log(this.props);
+
     return (
       <div className="Select">
         <label htmlFor={this.props.id} className="form__label">
@@ -34,7 +38,8 @@ class Select extends React.Component {
 
 Select.propTypes = {
   id: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired
 };
 
 export default Select;
