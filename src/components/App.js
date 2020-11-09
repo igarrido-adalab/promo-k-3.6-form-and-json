@@ -8,6 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.numberOptions = [1, 2, 3, 4];
+
     this.state = { };
 
     this.changeSelect = this.changeSelect.bind(this);
@@ -30,7 +32,7 @@ class App extends React.Component {
         <Header number="2.6" lesson="Estado" title="Formulario" subtitle="Con JSON!" />
         <main className="container">
           <section className="form">
-            <Select id="number" text="Escoge un número" handleChange={this.changeSelect} />
+            <Select id="number" text="Escoge un número" options={this.numberOptions} handleChange={this.changeSelect} />
           </section>
 
           <ResultJson result={this.state} />

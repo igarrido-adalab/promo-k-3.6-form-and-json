@@ -21,15 +21,36 @@ class Select extends React.Component {
     console.log("Select.render()");
     console.log(this.props);
 
+    /*
+    const htmlOptions = [];
+
+    for (let i = 0; i < this.props.options.length; i++) {
+      const eachOption = this.props.options[i];
+      
+      htmlOptions.push(
+        <option key={eachOption} value={eachOption}>
+          {eachOption}
+        </option>
+      );
+    }
+    */
+
+    const htmlOptions = this.props.options.map(
+      (eachOption, i) =>
+        (
+        <option key={eachOption} value={eachOption}>
+          {eachOption}
+        </option>
+      )
+    );
+
     return (
       <div className="Select">
         <label htmlFor={this.props.id} className="form__label">
           {this.props.text}:
         </label>
         <select name={this.props.id} id={this.props.id} className="form__select" onClick={this.handleChange}>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
+          {htmlOptions}
         </select>
       </div>
     );
