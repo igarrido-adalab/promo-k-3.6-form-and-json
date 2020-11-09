@@ -9,12 +9,13 @@ class Select extends React.Component {
   }
   handleChange(ev) {
     const selectChanged = ev.currentTarget;
+    const selectId = selectChanged.id;
     const valueSelected = selectChanged.value;
 
     console.log("Select.handleChange()");
     console.log(valueSelected);
 
-    this.props.handleChange(valueSelected);
+    this.props.handleChange(selectId,valueSelected);
   }
 
   render() {

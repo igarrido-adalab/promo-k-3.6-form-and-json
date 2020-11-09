@@ -13,25 +13,23 @@ class App extends React.Component {
 
     this.state = { };
 
-    this.changeSelect = this.changeSelect.bind(this);
-    this.changeText = this.changeText.bind(this);
+    this.changeInput = this.changeInput.bind(this);
   }
 
-  changeSelect(newValue) {
-    this.setState(
-      {
-        number: newValue
-      }
-    );
-  }
+  changeInput(fieldName, newValue) {
+    const newFieldValue = {};
+    newFieldValue[fieldName] = newValue;
 
-  changeText(newValue) {
-    // Añadimos sólo lo que cambia o lo que es nuevo
     this.setState(
-      {
-        name: newValue
-      }
-    );
+      (oldState) => {
+        const newState = {
+          ...oldState,
+          ...newFieldValue
+        };
+        console.log("setState");
+        console.log(newState);
+        return newState;
+    });
   }
 
   render() {
@@ -43,12 +41,12 @@ class App extends React.Component {
         <Header number="2.6" lesson="Estado" title="Formulario" subtitle="Con JSON!" />
         <main className="container">
           <section className="form">
-            <Select id="number" text="Escoge un número" options={this.numberOptions} handleChange={this.changeSelect} />
+            <Select id="number" text="Escoge un número" options={this.numberOptions} handleChange={this.changeInput} />
             <Text
               id="name"
               text="Escribe tu nombre"
               placeholder="Kizzmekia Shanta Corbett"
-              handleChange={this.changeText}
+              handleChange={this.changeInput}
             />
           </section>
 

@@ -10,12 +10,13 @@ class Text extends React.Component {
 
   handleBlur(ev) {
     const inputChanged = ev.currentTarget;
+    const inputId = inputChanged.id;
     const valueChanged = inputChanged.value;
 
     console.log("Text.handleBlur()");
     console.log(valueChanged);
 
-    this.props.handleChange(valueChanged);
+    this.props.handleChange(inputId,valueChanged);
   }
 
   render() {
