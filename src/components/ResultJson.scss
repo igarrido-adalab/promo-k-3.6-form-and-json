@@ -1,0 +1,10 @@
+.result {
+  width: 30vw;
+  box-sizing: border-box;
+
+  &__json {
+    overflow: auto;
+    border: 5px var(--almostwhite) dotted;
+    padding: 1em;
+  }
+}
